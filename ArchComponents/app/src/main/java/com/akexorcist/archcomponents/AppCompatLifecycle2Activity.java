@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
  * Created by Akexorcist on 7/9/2017 AD.
  */
 
-public class AppCompatLifeCycleActivity
+public class AppCompatLifecycle2Activity
         extends AppCompatActivity
         implements LifecycleRegistryOwner {
     LifecycleRegistry registry = new LifecycleRegistry(this);
