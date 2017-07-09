@@ -3,7 +3,6 @@ package com.akexorcist.archcomponents;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatLifeCycleActivity {
-    private AwesomeLocationListener locationListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
