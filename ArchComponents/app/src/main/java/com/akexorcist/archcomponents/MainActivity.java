@@ -2,7 +2,7 @@ package com.akexorcist.archcomponents;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatLifecycle2Activity {
+public class MainActivity extends AppCompatLifecycleActivity {
     private AwesomeLocationListener locationListener;
 
     @Override
