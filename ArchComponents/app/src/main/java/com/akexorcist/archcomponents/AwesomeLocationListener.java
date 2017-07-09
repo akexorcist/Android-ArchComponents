@@ -1,6 +1,5 @@
 package com.akexorcist.archcomponents;
 
-import android.annotation.SuppressLint;
 import android.arch.lifecycle.LiveData;
 import android.content.Context;
 import android.location.Location;
@@ -12,7 +11,7 @@ import android.os.Bundle;
  * Created by Akexorcist on 7/9/2017 AD.
  */
 
-@SuppressWarnings({"WeakerAccess", "StatementWithEmptyBody", "FieldCanBeLocal", "unused"})
+@SuppressWarnings({"WeakerAccess", "StatementWithEmptyBody", "FieldCanBeLocal", "unused", "MissingPermission"})
 
 public class AwesomeLocationListener extends LiveData<Location> {
     private LocationManager locationManager;
@@ -21,10 +20,10 @@ public class AwesomeLocationListener extends LiveData<Location> {
         locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
     }
 
-    @SuppressLint("MissingPermission")
     @Override
     protected void onActive() {
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 10, locationListener);
+        locationManager.requestLocationUpdates(
+                LocationManager.GPS_PROVIDER, 1000, 10, locationListener);
     }
 
     @Override

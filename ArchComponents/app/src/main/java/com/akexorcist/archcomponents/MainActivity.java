@@ -17,9 +17,9 @@ public class MainActivity extends AppCompatLifecycleActivity {
     }
 
     private void callLocationListener() {
-        AwesomeLocationListener listener = new AwesomeLocationListener(this);
-        listener.observe(this, location -> {
+        new AwesomeLocationListener(this).observe(this, location -> {
             // Update UI
         });
     }
 }
+
