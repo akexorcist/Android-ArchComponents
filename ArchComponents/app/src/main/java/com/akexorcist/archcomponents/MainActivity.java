@@ -9,18 +9,18 @@ public class MainActivity extends AppCompatLifeCycleActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        locationListener = new AwesomeLocationListener(this,
-                getLifecycle(),
-                location -> {
-                    // Update UI
-                });
+
         PermissionUtil.requestLocationPermission(enrolled -> {
             if (enrolled) {
-                locationListener.enable();
+                callLocationListener();
             }
         });
     }
+
+    private void callLocationListener() {
+        AwesomeLocationListener listener = new AwesomeLocationListener(this);
+        listener.observe(this, location -> {
+            // Update UI
+        });
+    }
 }
-
-
-
