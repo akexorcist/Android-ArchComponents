@@ -1,5 +1,6 @@
 package com.akexorcist.archcomponents;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatLifecycleActivity {
@@ -17,9 +18,11 @@ public class MainActivity extends AppCompatLifecycleActivity {
     }
 
     private void callLocationListener() {
-        new AwesomeLocationListener(this).observe(this, location -> {
-            // Update UI
-        });
+        ViewModelProviders.of(this)
+                .get(MainActivityViewModel.class)
+                .getLocation(this)
+                .observe(this, location -> {
+                    // Update UI
+                });
     }
 }
-
